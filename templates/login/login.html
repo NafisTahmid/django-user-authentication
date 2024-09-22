@@ -1,0 +1,14 @@
+{% extends "login/base.html" %}
+{% load static %}
+{% block body_block %}
+<h3>Please Login: </h3>
+<form action="{% url 'login:user_login' %}" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" name="username" placeholder="Enter username..." required>
+    <label for="password">Password:</label>
+    <input type="password"class="form-control" name="password" placeholder="Enter password.." required>
+    {% csrf_token %}
+    <br>
+    <input type="submit" name="submit" value="Loin">
+</form>
+{% endblock  %}
